@@ -9,4 +9,9 @@ public class PrimeiroController {
     public String hello() {                                         // se fosse GET
         return "Olá Spring Boot!";
     }
+
+//    @RequestMapping(value = "/hello", method = RequestMethod.POST) // Configura path para executar função como
+//    public String hello2() {                                         // se fosse GET
+//        return "Olá Spring Boot! Post";
+//    }
 }
