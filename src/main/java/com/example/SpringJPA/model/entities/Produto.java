@@ -1,9 +1,10 @@
 package com.example.SpringJPA.model.entities;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.NonNull;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+
 
 @Entity
 public class Produto {
@@ -11,10 +12,13 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Sequência automatica de Id's
     private int id;
+
+    @NotBlank
     private String nome;
-    @Column(nullable = true)
+    @Min(0)
     private double preco;
-    @Column(nullable = true)
+    @Min(0)
+    @Max(1)
     private double desconto;
 
     public Produto() {
