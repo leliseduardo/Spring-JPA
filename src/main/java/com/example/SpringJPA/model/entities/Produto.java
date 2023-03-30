@@ -1,10 +1,9 @@
 package com.example.SpringJPA.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.hibernate.mapping.PrimaryKey;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.persistence.*;
+import lombok.NonNull;
 
 @Entity
 public class Produto {
@@ -13,17 +12,19 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Sequência automatica de Id's
     private int id;
     private String nome;
+    @Column(nullable = true)
+    private double preco;
+    @Column(nullable = true)
+    private double desconto;
 
     public Produto() {
 
     }
 
-    public Produto(String nome) {
+    public Produto(String nome, double preco, double desconto) {
         this.nome = nome;
-    }
-
-    public Produto(int id) {
-        this.id = id;
+        this.preco = preco;
+        this.desconto = desconto;
     }
 
     public int getId() {
@@ -40,5 +41,21 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 }
