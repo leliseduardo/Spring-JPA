@@ -2,7 +2,7 @@ package com.example.SpringJPA.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.example.SpringJPA.models.Cliente;
+import com.example.SpringJPA.model.entities.Cliente;
 
 @RestController
 @RequestMapping("/clientes")

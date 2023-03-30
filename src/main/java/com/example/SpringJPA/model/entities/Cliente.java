@@ -1,4 +1,4 @@
-package com.example.SpringJPA.models;
+package com.example.SpringJPA.model.entities;
 
 public class Cliente {
 
