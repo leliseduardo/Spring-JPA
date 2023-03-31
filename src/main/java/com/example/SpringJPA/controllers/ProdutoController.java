@@ -36,6 +36,7 @@ public class ProdutoController {
         return produtoRepository.findById(id);
     }
 
+//    O PUT pode ser usado juntamente com a função POST, pois fazem a mesma coisa. O código fica mais limpo
 //    @PutMapping
 //    public Produto alterarProduto(@Valid Produto produto){
 //
@@ -43,6 +44,12 @@ public class ProdutoController {
 //
 //        return produto;
 //    }
+
+    @DeleteMapping(path = "/{id}")
+    public void excluirProduto(@PathVariable int id){
+
+        produtoRepository.deleteById(id);
+    }
 }
 
 
