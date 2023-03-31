@@ -15,6 +15,7 @@ public class ProdutoController {
     @Autowired      // Automaticamente o Spring cria um objeto do tipo ProdutoRepositorio e atribui à variável produtoRepository
     private ProdutoRepository produtoRepository;
 
+//    @PostMapping
     @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public @ResponseBody Produto salvarProduto(@Valid Produto produto){
 
